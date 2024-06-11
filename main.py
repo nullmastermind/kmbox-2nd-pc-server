@@ -1,6 +1,11 @@
+import os
+
+from dotenv import load_dotenv
 import socket
 
 import my_kmnet
+
+load_dotenv()
 
 
 def udp_server(host="127.0.0.1", port=12345):
@@ -30,7 +35,9 @@ def udp_server(host="127.0.0.1", port=12345):
 
 
 if __name__ == "__main__":
-    my_kmnet.init("192.168.2.188", "8357", "73E55C53")
+    my_kmnet.init(
+        os.environ["KMBOX_IP"], os.environ["KMBOX_PORT"], os.environ["KMBOX_MAC"]
+    )
     my_kmnet.monitor("10000")
 
     try:
