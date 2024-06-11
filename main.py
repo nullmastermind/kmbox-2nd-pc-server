@@ -12,7 +12,7 @@ def udp_server(host="127.0.0.1", port=12345):
     print(f"UDP server up and listening on {host}:{port}")
 
     while True:
-        data, address = sock.recvfrom(1024)
+        data, address = sock.recvfrom(2048)
         data_str = data.decode()
         commands = data_str.split("\n")
 
