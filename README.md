@@ -8,7 +8,13 @@ KM Server is a utility UDP server for KMBox-net designed to run on a secondary P
 
 ## Usage
 
+Install dependencies: `poetry install`
+
 Copy `.env.example` to `.env` and change the information
+
+Run server: `python main.py`
+
+UDP server: `127.0.0.1:12345`
 
 KM Server listens for UDP packets and performs actions based on the received commands. The commands should be in the format:
 
@@ -16,8 +22,6 @@ KM Server listens for UDP packets and performs actions based on the received com
 - `call_return,function_name,params...`
 
 For multiple calls, use line breaks to separate each command.
-
-UDP server: `127.0.0.1:12345`
 
 ### Example Call
 
