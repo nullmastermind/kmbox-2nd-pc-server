@@ -31,7 +31,7 @@ def udp_server(host="127.0.0.1", port=12345):
                 if call_type == "call_return":
                     sock.sendto(bytes(str(call_result), "utf-8"), address)
             except Exception as call_error:
-                print(call_error)
+                print("call_error: {}".format(call_error))
 
 
 if __name__ == "__main__":
