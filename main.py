@@ -8,7 +8,7 @@ import my_kmnet
 load_dotenv()
 
 
-def udp_server(host="127.0.0.1", port=12345):
+def udp_server(host="0.0.0.0", port=12345):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
     server_address = (host, port)
