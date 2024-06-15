@@ -1,9 +1,6 @@
 import os
-from dotenv import load_dotenv
 import socket
 import my_kmnet
-
-load_dotenv()
 
 
 def tcp_server(host="0.0.0.0", port=12345):
@@ -24,9 +21,12 @@ def tcp_server(host="0.0.0.0", port=12345):
                 if not data:
                     break
                 data_str = data.decode()
+
                 commands = data_str.split("\n")
 
                 for command in commands:
+                    if len(command) == 0:
+                        continue
                     try:
                         parts = command.split(",")
                         call_type = parts[0]
